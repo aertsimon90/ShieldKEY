@@ -99,7 +99,7 @@ class ShieldKEY: # Shield Kryptographic Engine for Yield
 			if gn%2 == 0:
 				gn += len(str(key))*8274
 			else:
-				gn += len(str(key))*2648
+				gn -= len(str(key))*2648
 		return newtext
 	def decrypt(self, text, key):
 		newkey, gn = self.convert_key(key)
@@ -109,7 +109,7 @@ class ShieldKEY: # Shield Kryptographic Engine for Yield
 			if gn%2 == 0:
 				gn += len(str(key))*8274
 			else:
-				gn += len(str(key))*2648
+				gn -= len(str(key))*2648
 		return newtext
 	def hash(self, text):
 		newtext = ""
